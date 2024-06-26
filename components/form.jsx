@@ -1,10 +1,14 @@
-const FormComponent = ({name,link}) => {
+const FormComponent = ({name,type,isRequired}) => {
     return (
-        <div>
-            <a href={link}>
-            <h1>{name}</h1>
-            </a>
-        </div>
+        <>
+            <label>{name}</label>
+            <input 
+                type={type} 
+                id={name} 
+                name={name} 
+                {...{isRequired} == true ? Required :{}}
+            />
+        </>
     )
 }
 
