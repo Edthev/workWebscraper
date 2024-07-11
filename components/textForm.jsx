@@ -1,4 +1,4 @@
-const textForm = ({name,type,isRequired}) => {
+const textForm = ({name,type,isRequired,placeholder}) => {
     return (
         <>
             <label>{name}</label>
@@ -7,6 +7,7 @@ const textForm = ({name,type,isRequired}) => {
                 id={name} 
                 name={name} 
                 {...{isRequired} == true ? Required :{}}
+                placeholder={placeholder}
             />
         </>
     )
