@@ -1,6 +1,5 @@
 const DropDownFormComponent = ({name,type,isRequired, options}) => {
 
-
     return (
         <>
             <label>Choose a {name}: </label>
