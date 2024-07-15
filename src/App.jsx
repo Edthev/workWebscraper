@@ -14,12 +14,12 @@ function App() {
     names:''
   })
   // const handleChange = (e) =>{
+  //   console.log(e.target)
   //   const {names,value} = e.target;
   //   setFormData({...formData, [names]:value})
   // }
   const handleSubmit = (e) =>{
     e.preventDefault();
-    // setFormData({names:""})
   }
   return (
       <div>
