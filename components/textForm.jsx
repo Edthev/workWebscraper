@@ -12,7 +12,7 @@ const textForm = ({name,type,isRequired,placeholder}) => {
     return (
         <>
             <label>{name}</label>
-            <div class="">
+            <div>
                 <input 
                     type={type} 
                     id={name} 
