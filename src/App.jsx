@@ -7,12 +7,10 @@ import SideBar from "../components/sidebar.jsx"
 
 function App() {
   //	Status	Tenant Call Notes	Tenant Number	Follow Up Notes	Created Time	Finished Notes	Super Arrived	Priority	Fix:
-  let buildingAddressesArray = Object.values(data["addresses"])
-  buildingAddressesArray = Object.keys(buildingAddressesArray[0])
+  const buildingAddressesArray = Object.keys(Object.values(data["addresses"])[0])
+  const vendorArray = Object.keys(Object.values(data["vendors"])[0])
   const status = data["status"]
-  const [formData,setFormData] = useState({
-    names:''
-  })
+  const [formData,setFormData] = useState({names:''})
   // const handleChange = (e) =>{
   //   console.log(e.target)
   //   const {names,value} = e.target;
@@ -31,6 +29,7 @@ function App() {
           <TextFormComponent name="Input Apt:"  isRequired={true} placeholder="Apt #"/>
           <TextFormComponent name="Input Notes:"  isRequired={false} placeholder="Notes"/>
           <DropDownFormComponent name="Status"  isRequired={false} options={status}/>
+          <DropDownFormComponent name="Status"  isRequired={false} options={vendorArray}/>
           <div></div>
           <input type="submit" value="Submit" />
         </form>
