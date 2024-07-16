@@ -2,7 +2,6 @@ const DropDownFormComponent = ({title,type,isRequired, options, handleChange}) =
     const handlingChange = (e) =>{
         const componentTitle = title
         const changeValue = e.target.value
-        console.log("selected:",e.target.value)
         handleChange(componentTitle,changeValue)
       }
     return (
@@ -15,6 +14,7 @@ const DropDownFormComponent = ({title,type,isRequired, options, handleChange}) =
                     </option>
                 ))}
             </select>
+            <p></p>
         </>
     )
 }
