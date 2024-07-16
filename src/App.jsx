@@ -11,8 +11,8 @@ function App() {
   const vendorArray = Object.keys(Object.values(data["vendors"])[0])
   const status = data["status"]
   const [formData,setFormData] = useState({names:''})
-  const handleChange = (names,values) =>{
-    setFormData({...formData, [names]:values})
+  const handleChange = ({componentTitle,changeValue}) =>{
+    setFormData({...formData, [componentTitle]:changeValue})
     console.log(formData)
   }
   const handleSubmit = (e) =>{
@@ -23,12 +23,12 @@ function App() {
         <SideBar/>
         <h1>Asden Maintenance</h1>
         <form onSubmit={handleSubmit}>
-          <TextFormComponent name="Input Name:" handleChange={handleChange}  isRequired={false} placeholder="Name"/>
-          <DropDownFormComponent name="Address"  isRequired={true} options={buildingAddressesArray}/>
-          <TextFormComponent name="Input Apt:"  isRequired={true} placeholder="Apt #"/>
-          <TextFormComponent name="Input Notes:"  isRequired={false} placeholder="Notes"/>
-          <DropDownFormComponent name="Status"  isRequired={false} options={status}/>
-          <DropDownFormComponent name="Status"  isRequired={false} options={vendorArray}/>
+          <TextFormComponent title="Name" handleChange={handleChange}  isRequired={false} placeholder="Name"/>
+          <DropDownFormComponent title="Address"  isRequired={true} options={buildingAddressesArray}/>
+          <TextFormComponent title="Apt"  isRequired={true} placeholder="Apt #"/>
+          <TextFormComponent title="Notes"  isRequired={false} placeholder="Notes"/>
+          <DropDownFormComponent title="Status"  isRequired={false} options={status}/>
+          <DropDownFormComponent title="Status"  isRequired={false} options={vendorArray}/>
           <div></div>
           <input type="submit" value="Submit" />
         </form>

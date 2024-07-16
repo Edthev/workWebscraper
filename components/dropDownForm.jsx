@@ -1,8 +1,8 @@
-const DropDownFormComponent = ({name,type,isRequired, options}) => {
+const DropDownFormComponent = ({title,type,isRequired, options}) => {
 
     return (
         <>
-            <label>Choose a {name}: </label>
+            <label>Choose a {title}: </label>
             <select className="dropdown" name="dropdown">
                 {options.map((option,i)=>(
                     <option key={i} value={option}>
