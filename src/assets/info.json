@@ -253,5 +253,15 @@
         "Tenant Texted Us",
         "Tenant Emailed Us",
         "Told Isaac"
+    ],
+    "vendors":[
+        {
+            "Webster Lock":{
+                "Email":"",
+                "Person":"",
+                "Number":"",
+                "Notes":""
+                      },
+        }
     ]
 }
