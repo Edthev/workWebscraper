@@ -92,6 +92,14 @@
     ],
     "addresses":[
         {
+            "":{
+                "Super":{
+                    "Name":"",
+                    "Number":"",
+                    "Notes":"",
+                    "Super's Replacement":null
+                }
+            },
             "3555 Bruckner Blvd (supers out)":{
                 "Super":{
                     "Name":"",
@@ -223,6 +231,7 @@
             }
     ],
     "status":[
+        "",
         "Call Super",
         "Called Super",
         "Texted Super",
@@ -256,6 +265,12 @@
     ],
     "vendors":[
         {
+            "":{
+                "Email":"",
+                "Person":"",
+                "Number":"",
+                "Notes":""
+                      },
             "test":{
                 "Email":"bronxtemp@asdenproperties.com",
                 "Person":"Edward",
