@@ -256,6 +256,12 @@
     ],
     "vendors":[
         {
+            "test":{
+                "Email":"bronxtemp@asdenproperties.com",
+                "Person":"Edward",
+                "Number":"123-456-7890",
+                "Notes":""
+                      },
             "Webster Lock":{
                 "Email":"service@websterlock.com",
                 "Person":"simon or jimmy",
@@ -321,13 +327,7 @@
                 "Person":"",
                 "Number":"",
                 "Notes":""
-                      },
-            "":{
-                "Email":"",
-                "Person":"",
-                "Number":"",
-                "Notes":""
-                      },
+                      }
             
         }
     ]
