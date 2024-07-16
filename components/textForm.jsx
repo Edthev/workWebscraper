@@ -1,13 +1,12 @@
 import react, {useState} from 'react'
 
-const textForm = ({name,type,isRequired,placeholder}) => {
+const textForm = ({name,type,isRequired,placeholder,handleChange}) => {
     const [formData,setFormData] = useState("")
 
-      const handleChange = (e) =>{
-          const {value} = e.target;
-          console.log("value",value)
-        setFormData(value)
-        console.log("formData",formData)
+      const handlingChange = (e) =>{
+        const names = name
+        const values = e.target.value
+        handleChange(names,values)
       }
     return (
         <>
@@ -19,7 +18,7 @@ const textForm = ({name,type,isRequired,placeholder}) => {
                     name={name} 
                     {...{isRequired} == true ? Required :{}}
                     placeholder={placeholder}
-                    onChange={handleChange}
+                    onChange={handlingChange}
                 />
             <p>{formData}</p>
             </div> 
