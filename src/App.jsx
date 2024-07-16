@@ -21,7 +21,28 @@ function App() {
     const name = e.target.elements.Name.value
     const notes = e.target.elements.Notes.value
     const timeStamp = e.timeStamp
+
+    const elements = event.target.elements
+
+    for (let i=0;i<elements.length;i++){
+      const element = elements[i]
+      if(element.name=="dropdown" || element.value=="Submit"){
+        for(let j=0;j<Object.values(formData).length;j++){
+          if(Object.values(formData)[j]==element.value){
+            console.log(Object.keys(formData)[j],element.value)
+          }
+        }
+      }else{
+        console.log(element.name,element.value)
+      }
+    }
   }
+
+  const sendEmail = async ()=>{
+
+  }
+  sendEmail()
+
   return (
       <div>
         <SideBar/>
