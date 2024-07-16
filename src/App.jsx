@@ -13,10 +13,14 @@ function App() {
   const [formData,setFormData] = useState({})
   const handleChange = (name,value) =>{
     setFormData({...formData, [name]:value})
-    console.log("formData",formData)
+    // console.log("formData",formData)
   }
   const handleSubmit = (e) =>{
     e.preventDefault();
+    const apt = e.target.elements.Apt.value
+    const name = e.target.elements.Name.value
+    const notes = e.target.elements.Notes.value
+    const timeStamp = e.timeStamp
   }
   return (
       <div>
@@ -28,7 +32,7 @@ function App() {
           <TextFormComponent title="Apt" handleChange={handleChange}  isRequired={true} placeholder="Apt #"/>
           <TextFormComponent title="Notes" handleChange={handleChange}  isRequired={false} placeholder="Notes"/>
           <DropDownFormComponent title="Status" handleChange={handleChange}  isRequired={false} options={status}/>
-          <DropDownFormComponent title="Status" handleChange={handleChange}  isRequired={false} options={vendorArray}/>
+          <DropDownFormComponent title="Vendor" handleChange={handleChange}  isRequired={false} options={vendorArray}/>
           <div></div>
           <input type="submit" value="Submit" />
         </form>
