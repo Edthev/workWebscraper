@@ -1,19 +1,38 @@
 import './index.css'
 import TextFormComponent from "../components/textForm.jsx"
 import DropDownFormComponent from "../components/dropDownForm.jsx"
-import react, {useState} from 'react'
 import data from "./assets/info.json"
 import SideBar from "../components/sidebar.jsx"
+import react, {useState, useEffect} from 'react'
 
-function App() {
+async function App() {
+  const [data1, setData] = useState(null);
+  useEffect(() => {
+
+    const fetchData = async () => {
+      try{
+        const dataRes = null
+        dataRes = await fetch('http://localhost:3001/')
+      }catch(err){
+        console.log(err)
+      }
+    }
+    fetchData()
+    console.log("dataRes",dataRes);
+    console.log("test");
+  }, []);
+  if(dataRes === null){
+    return <h1>Loading...</h1>
+  }
+
   //	Status	Tenant Call Notes	Tenant Number	Follow Up Notes	Created Time	Finished Notes	Super Arrived	Priority	Fix:
   const buildingAddressesArray = Object.keys(Object.values(data["addresses"])[0])
   const vendorArray = Object.keys(Object.values(data["vendors"])[0])
   const status = data["status"]
   const [formData,setFormData] = useState({})
+
   const handleChange = (name,value) =>{
     setFormData({...formData, [name]:value})
-    // console.log("formData",formData)
   }
   const handleSubmit = (e) =>{
     e.preventDefault();
@@ -48,13 +67,13 @@ function App() {
         <SideBar/>
         <h1>Asden Maintenance</h1>
         <form onSubmit={handleSubmit}>
-          <TextFormComponent title="Name" handleChange={handleChange}  isRequired={false} placeholder="Name"/>
+          {/* <TextFormComponent title="Name" handleChange={handleChange}  isRequired={false} placeholder="Name"/>
           <DropDownFormComponent title="Address" handleChange={handleChange}  isRequired={true} options={buildingAddressesArray}/>
           <TextFormComponent title="Apt" handleChange={handleChange}  isRequired={true} placeholder="Apt #"/>
           <TextFormComponent title="Notes" handleChange={handleChange}  isRequired={false} placeholder="Notes"/>
           <DropDownFormComponent title="Status" handleChange={handleChange}  isRequired={false} options={status}/>
           <DropDownFormComponent title="Vendor" handleChange={handleChange}  isRequired={false} options={vendorArray}/>
-          <div></div>
+          <div></div> */}
           <input type="submit" value="Submit" />
         </form>
       </div>
