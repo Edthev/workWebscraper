@@ -5,13 +5,14 @@ import data from "./assets/info.json"
 import SideBar from "../components/sidebar.jsx"
 import react, {useState, useEffect} from 'react'
 
-async function App() {
-  const [data1, setData] = useState(null);
+function App() {
+  let dataRes = null
+  const [data, setData] = useState(null);
   useEffect(() => {
 
     const fetchData = async () => {
       try{
-        const dataRes = null
+        console.log("fetching...")
         dataRes = await fetch('http://localhost:3001/')
       }catch(err){
         console.log(err)
@@ -19,7 +20,6 @@ async function App() {
     }
     fetchData()
     console.log("dataRes",dataRes);
-    console.log("test");
   }, []);
   if(dataRes === null){
     return <h1>Loading...</h1>
@@ -57,9 +57,6 @@ async function App() {
     }
   }
 
-  const sendEmail = async ()=>{
-
-  }
   sendEmail()
 
   return (
