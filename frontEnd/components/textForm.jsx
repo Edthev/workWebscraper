@@ -8,6 +8,24 @@ const textForm = ({title,type,isRequired,placeholder,handleChange}) => {
         const changeValue = e.target.value
         handleChange(componentTitle,changeValue)
       }
+      if(isRequired){
+        return (
+            <>
+            <label>Input {title}:</label>
+            <div>
+                <input 
+                    type={type} 
+                    id={title} 
+                    name={title} 
+                    placeholder={placeholder}
+                    onChange={handlingChange}
+                    required
+                />
+            <p>{formData}</p>
+            </div> 
+        </>
+        )
+      }
     return (
         <>
             <label>Input {title}:</label>
@@ -16,7 +34,6 @@ const textForm = ({title,type,isRequired,placeholder,handleChange}) => {
                     type={type} 
                     id={title} 
                     name={title} 
-                    {...{isRequired} == true ? Required :{}}
                     placeholder={placeholder}
                     onChange={handlingChange}
                 />
