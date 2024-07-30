@@ -9,6 +9,7 @@ import axios from "axios"
 function App() {
   const [data, setData] = useState(null);
   const [formData,setFormData] = useState({})
+  const [formSubmitData,setFormSubmitData] = useState({})
   useEffect(() => {
         axios
         .get('http://localhost:3001/')
@@ -22,7 +23,6 @@ function App() {
   if(data === null){
     return <h1>Loading...</h1>
   }
-  console.log(formData)
   //	Status	Tenant Call Notes	Tenant Number	Follow Up Notes	Created Time	Finished Notes	Super Arrived	Priority	Fix:
   const buildingAddressesArray = Object.keys(Object.values(data["addresses"])[0])
   const vendorArray = Object.keys(Object.values(data["vendors"])[0])
@@ -33,31 +33,36 @@ function App() {
   }
   const handleSubmit = (e) =>{
     e.preventDefault();
-    const name = e.target.elements.Name.value
-    const address = e.target.elements.Address.value
-    console.log(address)
-    const apt = e.target.elements.Apt.value
-    const notes = e.target.elements.Notes.value
-    const timeStamp = e.timeStamp
+    //this may cause bugs in the future (this only submits if theres changes)
+    setFormSubmitData(formData)
+    console.log("formSubmitData",formSubmitData)
+    console.log("formData",formData)
 
-    const elements = event.target.elements
+    // let name = e.target.elements.Name.value
+    // let address = e.target.elements.Address
+    // let apt = e.target.elements.Apt.value
+    // let notes = e.target.elements.Notes.value
+    // let timeStamp = e.timeStamp
 
-    for (let i=0;i<elements.length;i++){
-      const element = elements[i]
-      if(element.name=="dropdown" || element.value=="Submit"){
-        for(let j=0;j<Object.values(formData).length;j++){
-          if(Object.values(formData)[j]==element.value){
-            console.log(Object.keys(formData)[j],element.value)
-          }
-        }
-      }else{
-        console.log(element.name,element.value)
-      }
-    }
-    name=""
-    address=""
-    apt=""
-    notes=""
+    // const elements = event.target.elements
+
+    // for (let i=0;i<elements.length;i++){
+    //   const element = elements[i]
+    //   if(element.name=="dropdown" || element.value=="Submit"){
+    //     for(let j=0;j<Object.values(formData).length;j++){
+    //       if(Object.values(formData)[j]==element.value){
+    //         console.log(`${element.name}:`,Object.keys(formData)[j],element.value)
+    //       }
+    //     }
+    //   }else{
+    //     console.log(`${element.name}::`,element.value)
+    //     console.log(`${element}::`,element.value)
+    //   }
+    // }
+    // name=""
+    // address=""
+    // apt=""
+    // notes=""
   }
 
   return (
