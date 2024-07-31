@@ -31,12 +31,18 @@ function App() {
   const handleChange = (name,value) =>{
     setFormData({...formData, [name]:value})
   }
-  const handleSubmit = (e) =>{
+  const handleSubmit =async (e) =>{
     e.preventDefault();
     //this may cause bugs in the future (this only submits if theres changes)
     setFormSubmitData(formData)
     console.log("formSubmitData",formSubmitData)
     console.log("formData",formData)
+    try{
+      const res = await axios.post('http://localhost:3001/data', data)
+      console.log(res)
+    }catch(err){
+      console.error("error",err)
+    }
   }
 
   return (
