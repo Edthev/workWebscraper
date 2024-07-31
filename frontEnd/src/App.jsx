@@ -9,7 +9,6 @@ import axios from "axios"
 function App() {
   const [data, setData] = useState(null);
   const [formData,setFormData] = useState({})
-  const [formSubmitData,setFormSubmitData] = useState({})
   useEffect(() => {
         axios
         .get('http://localhost:3001/')
@@ -33,12 +32,14 @@ function App() {
   }
   const handleSubmit =async (e) =>{
     e.preventDefault();
-    //this may cause bugs in the future (this only submits if theres changes)
-    setFormSubmitData(formData)
-    console.log("formSubmitData",formSubmitData)
-    console.log("formData",formData)
     try{
-      const res = await axios.post('http://localhost:3001/data', data)
+      const res = await axios.post('http://localhost:3001/data', formData,
+        {
+          headers:{
+            'Content-Type': 'application/json',
+          }
+        }
+      )
       console.log(res)
     }catch(err){
       console.error("error",err)
