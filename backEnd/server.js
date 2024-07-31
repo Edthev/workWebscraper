@@ -6,6 +6,7 @@ const port = 3001;
 const fs = require('fs')
 
 app.use(cors())
+app.use(express.json())
 
 app.get('/', (req, res) => {
   res.send(data);
@@ -18,7 +19,8 @@ app.listen(port, () => {
 app.post('/data',async(req,res)=>{
   const data = req.body
   try{
-    fs.readFile
+    // fs.readFile
+    console.log("data:",data)
     res.status(201).json({message:"Saved Successfully"})
   }catch (error) {
     res.status(500).json({message:"Saving Error",error})
