@@ -37,32 +37,6 @@ function App() {
     setFormSubmitData(formData)
     console.log("formSubmitData",formSubmitData)
     console.log("formData",formData)
-
-    // let name = e.target.elements.Name.value
-    // let address = e.target.elements.Address
-    // let apt = e.target.elements.Apt.value
-    // let notes = e.target.elements.Notes.value
-    // let timeStamp = e.timeStamp
-
-    // const elements = event.target.elements
-
-    // for (let i=0;i<elements.length;i++){
-    //   const element = elements[i]
-    //   if(element.name=="dropdown" || element.value=="Submit"){
-    //     for(let j=0;j<Object.values(formData).length;j++){
-    //       if(Object.values(formData)[j]==element.value){
-    //         console.log(`${element.name}:`,Object.keys(formData)[j],element.value)
-    //       }
-    //     }
-    //   }else{
-    //     console.log(`${element.name}::`,element.value)
-    //     console.log(`${element}::`,element.value)
-    //   }
-    // }
-    // name=""
-    // address=""
-    // apt=""
-    // notes=""
   }
 
   return (
