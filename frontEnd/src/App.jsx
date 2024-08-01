@@ -32,6 +32,8 @@ function App() {
   }
   const handleSubmit =async (e) =>{
     e.preventDefault();
+    const timestamp = new Date()
+    formData.Time = timestamp
     try{
       const res = await axios.post('http://localhost:3001/data', formData,
         {
