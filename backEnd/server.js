@@ -57,9 +57,11 @@ app.post('/data',async(req,res)=>{
       data[Address][Apt] = {}
     }
 
-    
+   const reqTime = reqData.Time
 
-    data[Address][Apt] = reqData[Time]
+    console.log("reqTime",reqTime)
+
+    data[Address][Apt][reqTime] = reqData
 
     writeDataToFile(data)
     
