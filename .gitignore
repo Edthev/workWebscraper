@@ -25,4 +25,4 @@ dist-ssr
 *.sln
 *.sw?
 
-backEnd\assets\data.json
+/backEnd\assets\data.json
