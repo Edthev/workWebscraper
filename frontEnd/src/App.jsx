@@ -27,7 +27,7 @@ function App() {
     })
   },[])
   useEffect(()=>{
-    
+    console.log("maintanenceData",maintenanceData)
   },[formData])
   if(componentData === null){
     return <h1>Loading...</h1>
@@ -52,7 +52,12 @@ function App() {
           }
         }
       )
-      console.log(res)
+      console.log("res",res)
+    axios.get('http://localhost:3001/data').then(res=>{
+      console.log("re-data",res.data)
+      setMaintenanceData(res.data)
+
+    })
     }catch(err){
       console.error("error",err)
     }
