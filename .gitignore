@@ -26,4 +26,4 @@ dist-ssr
 *.sw?
 
 /backEnd/assets/data.json
-*/
+*/data.json
