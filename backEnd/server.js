@@ -1,5 +1,5 @@
 const infoFilePath  = require("./assets/info.json")
-const dataFilePath  = "./assets/data.json"
+const dataFilePath  = require("./assets/data.json")
 const cors = require('cors')
 const express = require('express');
 const app = express();
@@ -72,3 +72,7 @@ app.post('/data',async(req,res)=>{
     res.status(500).json({message:"Saving Error",error})
   }
 })
+app.get('/data',(req,res)=>{
+  res.send(dataFilePath)
+})
+app.get('/login',(req,res)=>{})
