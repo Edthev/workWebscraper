@@ -76,4 +76,5 @@ app.post('/data',async(req,res)=>{
 app.get('/data',(req,res)=>{
   res.send(maintenaceData)
 })
-app.get('/login',(req,res)=>{})
+app.get('/login',(req,res)=>{
+})
