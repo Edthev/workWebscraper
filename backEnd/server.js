@@ -1,5 +1,6 @@
 const infoFilePath  = require("./assets/info.json")
-const dataFilePath  = require("./assets/data.json")
+const dataFilePath  = "./assets/data.json"
+const maintenaceData = require("./assets/data.json") 
 const cors = require('cors')
 const express = require('express');
 const app = express();
@@ -24,7 +25,7 @@ app.post('/data',async(req,res)=>{
       return JSON.parse(rawData);
     } catch (error) {
       console.error('Error reading data from file:', error);
-      return {};
+      return res.status(400).json({Error: "Error Reading Data From File"});
     }
   };
   const writeDataToFile = (data) => {
@@ -73,6 +74,6 @@ app.post('/data',async(req,res)=>{
   }
 })
 app.get('/data',(req,res)=>{
-  res.send(dataFilePath)
+  res.send(maintenaceData)
 })
 app.get('/login',(req,res)=>{})
