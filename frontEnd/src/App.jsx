@@ -7,25 +7,35 @@ import react, {useState, useEffect} from 'react'
 import axios from "axios"
 
 function App() {
-  const [data, setData] = useState(null);
+  const [componentData, setComponentData] = useState(null);
+  const [maintenanceData,setMaintenanceData] = useState(null)
+  const [selectedAptData,setSelectedAptData] = useState(null)
   const [formData,setFormData] = useState({})
   useEffect(() => {
         axios
         .get('http://localhost:3001/')
         .then(res=>{
-          setData(res.data)
+          setComponentData(res.data)
         })
         .catch(err=>{
           console.log("Err:",err)
         })
     }, []);
-  if(data === null){
+  useEffect(()=>{
+    axios.get('http://localhost:3001/data').then(res=>{
+      setMaintenanceData(res.data)
+    })
+  },[])
+  useEffect(()=>{
+    
+  },[formData])
+  if(componentData === null){
     return <h1>Loading...</h1>
   }
   //	Status	Tenant Call Notes	Tenant Number	Follow Up Notes	Created Time	Finished Notes	Super Arrived	Priority	Fix:
-  const buildingAddressesArray = Object.keys(Object.values(data["addresses"])[0])
-  const vendorArray = Object.keys(Object.values(data["vendors"])[0])
-  const status = data["status"]
+  const buildingAddressesArray = Object.keys(Object.values(componentData["addresses"])[0])
+  const vendorArray = Object.keys(Object.values(componentData["vendors"])[0])
+  const status = componentData["status"]
 
   const handleChange = (name,value) =>{
     setFormData({...formData, [name]:value})
@@ -59,6 +69,9 @@ function App() {
           <TextBoxWithDropdownComponent title="Status" handleChange={handleChange}  isRequired={true} options={status}/>
           <input type="submit" value="Submit" />
         </form>
+        <div id="data">
+          {maintenanceData === null ? <div>Loading</div>:""}
+        </div>
       </div>
   )
 }
