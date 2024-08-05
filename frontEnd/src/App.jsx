@@ -53,13 +53,10 @@ function App() {
         <SideBar/>
         <h1>Asden Maintenance</h1>
         <form onSubmit={handleSubmit}>
-          <TextFormComponent title="Name" handleChange={handleChange}  isRequired={true} placeholder="Name"/>
           <TextBoxWithDropdownComponent title="Address" handleChange={handleChange}  isRequired={true} options={buildingAddressesArray}/>
           <TextFormComponent title="Apt" handleChange={handleChange}  isRequired={true} placeholder="Apt #"/>
           <TextFormComponent title="Notes" handleChange={handleChange}  isRequired={true} placeholder="Notes"/>
           <TextBoxWithDropdownComponent title="Status" handleChange={handleChange}  isRequired={true} options={status}/>
-          <TextBoxWithDropdownComponent title="Vendor" handleChange={handleChange}  isRequired={true} options={vendorArray}/>
-          <div></div>
           <input type="submit" value="Submit" />
         </form>
       </div>
