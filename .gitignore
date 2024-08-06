@@ -25,5 +25,8 @@ dist-ssr
 *.sln
 *.sw?
 
+*/.vite
+*/.vscode
+
 /backEnd/assets/data.json
 */data.json
