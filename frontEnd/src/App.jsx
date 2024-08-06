@@ -71,6 +71,7 @@ function App() {
           <TextBoxWithDropdownComponent title="Address" handleChange={handleChange}  isRequired={true} options={buildingAddressesArray}/>
           <TextFormComponent title="Apt" handleChange={handleChange}  isRequired={true} placeholder="Apt #"/>
           <TextFormComponent title="Notes" handleChange={handleChange}  isRequired={true} placeholder="Notes"/>
+          <TextFormComponent title="PhoneNumber" handleChange={handleChange} isRequired={true} placeholder="999-999-9999"/>
           <TextBoxWithDropdownComponent title="Status" handleChange={handleChange}  isRequired={true} options={status}/>
           <input type="submit" value="Submit" />
         </form>
