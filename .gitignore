@@ -1,6 +1,8 @@
 .gitignore
-\backEnd\assets\propertiesLookupList.json
-/backEnd/assets/propertiesLookupList.json
+backEnd/assets/data.json
+/backEnd/assets/filteredPropertiesLookupList.json
+\backEnd\assets\allPropertiesLookupList.json
+/backEnd/assets/allPropertiesLookupList.json
 # Logs
 logs
 *.log
@@ -33,3 +35,7 @@ dist-ssr
 /backEnd/assets/data.json
 backEnd\assets\data.json
 */data.json
+backEnd\assets\yardiAPI.json
+backEnd\assets\yardiAPI.json
+backEnd/assets/yardiAPI.json
+backEnd/assets/data.json
