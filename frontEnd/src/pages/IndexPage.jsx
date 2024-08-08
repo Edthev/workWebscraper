@@ -1,8 +1,8 @@
-import './index.css'
-import TextFormComponent from "../components/textForm.jsx"
-import TextBoxWithDropdownComponent from "../components/TextBoxWithDropdown.jsx"
-// import data from "./assets/info.json"
-import SideBar from "../components/sidebar.jsx"
+import './index.scss'
+import TextFormComponent from "../../components/textForm.jsx"
+import TextBoxWithDropdownComponent from "../../components/TextBoxWithDropdown.jsx"
+import SideBar from "../../components/sidebar.jsx"
+import data from "../assets/info.json"
 import react, {useState, useEffect} from 'react'
 import axios from "axios"
 
@@ -59,6 +59,7 @@ function App() {
     }catch(err){
       console.error("error",err)
     }
+}
   return (
       <div>
         <SideBar/>
@@ -77,5 +78,5 @@ function App() {
       </div>
   )
 }
-}
+
 export default App
