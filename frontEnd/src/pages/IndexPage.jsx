@@ -1,8 +1,6 @@
 import './index.scss'
-import TextFormComponent from "../../components/textForm.jsx"
-import TextBoxWithDropdownComponent from "../../components/TextBoxWithDropdown.jsx"
-import SideBar from "../../components/sidebar.jsx"
-import data from "../assets/info.json"
+import TextFormComponent from "../components/textForm.jsx"
+import TextBoxWithDropdownComponent from "../components/TextBoxWithDropdown.jsx"
 import react, {useState, useEffect} from 'react'
 import axios from "axios"
 
@@ -62,7 +60,6 @@ function App() {
 }
   return (
       <div>
-        <SideBar/>
         <h1>Asden Maintenance</h1>
         <form onSubmit={handleSubmit}>
           <TextBoxWithDropdownComponent title="Address" handleChange={handleChange}  isRequired={true} options={buildingAddressesArray}/>
